@@ -1,0 +1,8 @@
+{
+    "Radio": {
+        "device": "USB Audio Device",
+        "devices": {
+            "USB Audio Device": 48000
+        }
+    }
+}

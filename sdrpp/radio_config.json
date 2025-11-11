@@ -1,0 +1,36 @@
+{
+    "Radio": {
+        "DSB": {
+            "FMIFNREnabled": false,
+            "bandwidth": 4600.0,
+            "deempMode": "None",
+            "noiseBlankerEnabled": false,
+            "noiseBlankerLevel": 1.0,
+            "snapInterval": 100.0,
+            "squelchEnabled": false,
+            "squelchLevel": -100.0
+        },
+        "USB": {
+            "FMIFNREnabled": false,
+            "agcAttack": 1.0,
+            "bandwidth": 2800.0,
+            "deempMode": "None",
+            "noiseBlankerEnabled": false,
+            "noiseBlankerLevel": 1.0,
+            "snapInterval": 100.0,
+            "squelchEnabled": false,
+            "squelchLevel": -100.0
+        },
+        "WFM": {
+            "FMIFNREnabled": false,
+            "bandwidth": 169651.265625,
+            "deempMode": "50us",
+            "noiseBlankerEnabled": false,
+            "noiseBlankerLevel": 1.0,
+            "snapInterval": 100000.0,
+            "squelchEnabled": false,
+            "squelchLevel": -100.0
+        },
+        "selectedDemodId": 4
+    }
+}
