@@ -1,0 +1,32 @@
+# Filename: requirements.txt
+# G90-SDR Python Dependencies
+
+# Serial communication
+pyserial>=3.5
+
+# XML-RPC for FlRig control (built-in to Python 3)
+# No package installation needed - use xmlrpc.client and xmlrpc.server
+
+# Network communication
+requests>=2.31.0
+
+# Configuration file handling
+pyyaml>=6.0.1
+configparser>=6.0.0
+
+# Audio processing
+numpy>=1.24.0
+pyaudio>=0.2.14
+sounddevice>=0.4.6
+
+# System monitoring
+psutil>=5.9.8
+
+# Logging enhancements
+colorlog>=6.8.2
+
+# Date/time utilities
+python-dateutil>=2.9.0
+
+# Type checking
+typing-extensions>=4.9.0

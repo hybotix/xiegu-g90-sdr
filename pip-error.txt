@@ -1,0 +1,7 @@
+Looking in links: /tmp/tmpraak8vu6
+Processing /tmp/tmpraak8vu6/pip-24.2-py3-none-any.whl
+Installing collected packages: pip
+Successfully installed pip-24.2
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable.It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+rm: cannot remove 'Python-3.13.0/Lib/xml/parsers/__pycache__/__init__.cpython-313.pyc': Permission denied
+rm: cannot remove 'Python-3.13.0/Lib/xml/parsers/__pycache__/expat.cpython-313.pyc': Permission denied

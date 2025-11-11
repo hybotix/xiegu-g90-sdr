@@ -1,0 +1,5 @@
+If Python 3.13 is not available on system and it is not available from a distro repo, if the user decides not to install from source, the script should exit with a polite message that 3.13 is *required*.
+
+Is there a way to probe and find out how much RAM a board has and show it?
+
+Of course, a user can always manually edit install.bash to get around this, but then *it would not be my fault* if something did not work. We can only do so much, and people *will* be stupid if at all possible.

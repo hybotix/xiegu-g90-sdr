@@ -1,0 +1,6 @@
+#!/bin/bash
+clear
+git pull
+clear
+./install.bash
+

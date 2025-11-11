@@ -1,0 +1,81 @@
+# Multi-Radio Configuration for G90-SDR
+# Each radio gets its own complete stack:
+#   - FlRig instance (CAT control)
+#   - GQRX instance (waterfall display)
+#   - FrequencySync (bidirectional sync between radio and GQRX)
+#   - RigctldBridge (HamLib protocol for digital mode apps)
+#
+# IMPORTANT: Each radio must use unique ports to avoid conflicts!
+#
+# Port allocation strategy:
+#   Radio 1: FlRig=12345, GQRX=7356, rigctld=4532
+#   Radio 2: FlRig=12346, GQRX=7357, rigctld=4533
+#   Radio 3: FlRig=12347, GQRX=7358, rigctld=4534
+#   etc.
+
+radios:
+  # Radio 1: Primary G90 (default configuration)
+  - name: "G90-1"
+    enabled: true
+    description: "Primary Xiegu G90 on USB0"
+
+    # Serial port for CAT control (FlRig uses this)
+    serial_port: "/dev/ttyUSB0"
+
+    # FlRig XML-RPC server port
+    # This is where RigControl connects to read/write frequency
+    flrig_port: 12345
+
+    # GQRX remote control port
+    # This is where FrequencySync sends frequency updates
+    gqrx_port: 7356
+
+    # rigctld server port (HamLib protocol)
+    # Digital mode apps (WSJT-X, JTDX, fldigi) connect here
+    rigctld_port: 4532
+
+    # Initial frequency in Hz (14.200 MHz - 20m band USB)
+    initial_frequency: 14200000
+
+    # Audio configuration
+    audio:
+      # PulseAudio source for this radio's I/Q audio
+      source: "pulse"
+      sample_rate: 48000
+      bandwidth: 1000000
+
+  # Radio 2: Secondary G90 (example configuration - disabled by default)
+  - name: "G90-2"
+    enabled: false
+    description: "Secondary Xiegu G90 on USB1"
+
+    serial_port: "/dev/ttyUSB1"
+    flrig_port: 12346
+    gqrx_port: 7357
+    rigctld_port: 4533
+
+    # Initial frequency in Hz (7.076 MHz - 40m band FT8)
+    initial_frequency: 7076000
+
+    audio:
+      source: "pulse"
+      sample_rate: 48000
+      bandwidth: 1000000
+
+# Global settings (apply to all radios)
+global:
+  # Frequency sync poll interval (seconds)
+  sync_interval: 0.5
+
+  # Frequency change deadband (Hz) - ignore changes smaller than this
+  deadband: 100
+
+  # PTT timeout (seconds) - auto-release PTT after this time
+  ptt_timeout: 180
+
+  # Startup timeouts (seconds)
+  timeouts:
+    flrig: 10
+    gqrx: 30
+    frequency_sync: 5
+    rigctld: 5
